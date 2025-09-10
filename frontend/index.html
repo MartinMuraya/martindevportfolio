@@ -381,6 +381,7 @@
           body: JSON.stringify(data),
         });
         const result = await res.json();
+        console.log(result);
 
         if (result.success) {
           status.textContent = "✅ Message sent successfully!";
