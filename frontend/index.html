@@ -49,9 +49,10 @@
       </ul>
 
       <!-- Mobile Menu Button -->
-      <button id="menuBtn" class="md:hidden text-indigo-600 text-2xl">
-        ☰
-      </button>
+    <button id="menuBtn" class="md:hidden   text-indigo-600 text-2xl">
+      <span id="menuIcon">☰</span>
+    </button>
+
     </div>
 
     <!-- Mobile Dropdown -->
@@ -392,11 +393,20 @@
 
   <script>
     // Mobile menu toggle
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
+  const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const menuIcon = document.getElementById("menuIcon");
+
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+
+  // Toggle icon
+  if (menuIcon.textContent === "☰") {
+    menuIcon.textContent = "✖"; // Show X when menu is open
+  } else {
+    menuIcon.textContent = "☰"; // Show hamburger when menu is closed
+  }
+});
 
     // Contact form
 
